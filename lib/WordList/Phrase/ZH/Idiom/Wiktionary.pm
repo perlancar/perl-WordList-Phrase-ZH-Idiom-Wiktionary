@@ -13,6 +13,12 @@ our @ISA = qw(WordList);
 1;
 # ABSTRACT: Chinese idioms (chengyu) from wiktionary.org
 
+=head1 DESCRIPTION
+
+This module contains idioms from Wiktionary. Only simplified forms are included
+here.
+
+
 =head1 SEE ALSO
 
 L<https://en.wiktionary.org/w/index.php?title=Category:Chinese_idioms>
