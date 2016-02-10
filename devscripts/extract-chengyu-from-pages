@@ -10,6 +10,7 @@ use File::Slurper qw(read_text);
 binmode STDOUT, ":utf8";
 
 my @w;
+my %mem;
 
 for my $file (<../devdata/*Chinese*>) {
     my $ct = read_text($file);
@@ -19,6 +20,7 @@ for my $file (<../devdata/*Chinese*>) {
     $ct =~ s!<h3>一</h3>.+!!s;
 
     while ($ct =~ m!^<li><a href="/wiki[^>]+>(.+?)</a></li>!gm) {
+        next if $mem{$1}++;
         push @w, $1;
     }
 }
